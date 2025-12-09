@@ -1,22 +1,49 @@
-# 🤖 AI Code Assistant
+# AI Code Assistant
 
-AI-powered development assistant.
+An AI-powered code generation and review tool using OpenAI.
 
 ## Features
-- Code generation and completion
-- Bug detection and fixing
-- Code review automation
-- Documentation generation
-- Refactoring suggestions
-- Test generation
-- Multi-language support
+
+- Code generation
+- Code review
+- Code refactoring
+- Multiple language support
+- RESTful API
 
 ## Tech Stack
-- Python
-- OpenAI API
-- VS Code Extension
-- Language Server Protocol
+
+- **Backend**: Node.js, Express
+- **AI**: OpenAI API
+- **Language**: JavaScript, Python, etc.
+
+## Project Structure
+
+\`\`\`
+ai-code-assistant/
+├── src/
+│   ├── assistant.js     # AI assistant
+│   ├── utils/           # Code formatter
+│   └── index.js         # API server
+└── package.json
+\`\`\`
+
+## Installation
+
+\`\`\`bash
+npm install
+\`\`\`
+
+## Configuration
+
+\`\`\`
+OPENAI_API_KEY=your-api-key
+\`\`\`
+
+## API Endpoints
+
+- \`POST /generate\` - Generate code
+- \`POST /review\` - Review code
 
 ---
 
-**POWERED BY L8AB SYSTEMS** ⚡
+**POWERED BY L8AB SYSTEMS**
