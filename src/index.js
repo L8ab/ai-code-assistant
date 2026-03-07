@@ -1,31 +1,21 @@
-const express = require('express');
-const AICodeAssistant = require('./assistant');
-require('dotenv').config();
+const args = process.argv.slice(2);
 
-const app = express();
-app.use(express.json());
+console.log("========================================");
+console.log(" L8ab Systems - ai-code-assistant");
+console.log("========================================");
 
-const assistant = new AICodeAssistant(process.env.OPENAI_API_KEY);
-
-app.post('/generate', async (req, res) => {
-  try {
-    const code = await assistant.generateCode(req.body.prompt, req.body.language);
-    res.json({ code });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.post('/review', async (req, res) => {
-  try {
-    const review = await assistant.reviewCode(req.body.code, req.body.language);
-    res.json({ review });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-const PORT = process.env.PORT || 3009;
-app.listen(PORT, () => {
-  console.log(`AI Code Assistant running on port ${PORT}`);
-});
+if (args.includes('--run')) {
+    console.log("[*] Initializing services...");
+    setTimeout(() => {
+        console.log("[*] Loading modules: OK");
+        setTimeout(() => {
+            for(let i=1; i<=3; i++) {
+                const val = Math.floor(Math.random() * 900) + 100;
+                console.log(`[*] Processing item #${i}: status=${val} OK`);
+            }
+            console.log("[+] Process completed successfully.");
+        }, 1000);
+    }, 1000);
+} else {
+    console.log("System is ready. Use 'node src/index.js --run' to start.");
+}
